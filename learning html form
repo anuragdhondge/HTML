@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>HTML FORMS</title>
+</head>
+
+
+<body>
+	
+<form>
+	<center><h1>APPLICATION FORM</h1>
+	<h2>PERSONAL DETAILS</h2></center>
+	<h4>Name:</h4><br>
+	<label for="fname" > First name: </label> <br>
+	<input type="text" name="fname" placeholder="firstname" required><br>
+
+	<label for="lname" > last name: </label> <br>
+	<input type="text" name="lname" placeholder="lastname"required><br><hr>
+	<h4>Phone no:</h4><br>
+	<label>
+		<input type="text" name="country code" placeholder="country code" value="+91" size="2">
+		<input type="phone" name="phone" pattern="[0-9]{4}-[0-9]{6}" placeholder="1234-567890"  size="10" required>
+	</label><br><br><hr>
+	<h4>Address:</h4>
+	<textarea rows="5" cols="80" placeholder="current Address" value="address" required></textarea><br><br><br><hr>
+	<h4>Resume:</h4>
+	<label for ="myfile">Drop your Resume:</label>
+	<input type="file" id="myfile" name="myfile"required><br><br>
+
+	<label for "email">Email</label>
+	<input type="email" placeholder="enter email" name="email"required><br><br>
+
+	<label for "password">Password</label>
+	<input type="password" placeholder="enter password" name="password"required><br><br>
+
+	<label for "psw-repeat">Password-Repeat</label>
+	<input type="password" placeholder="psw-repeat" name="password-repeat"required><br><br><br><hr>
+
+
+	<form>
+		Select Your Gender:<br>
+		<input type="radio" name="gender" value="male">
+		<label>male</label><br>
+
+		<input type="radio" name="gender" value="female">
+		<label>female</label><br>
+		
+		<input type="radio" name="gender" value="other">
+		<label>other</label><br><br><br><hr>
+		
+		Select Your Gender:<br>
+		<input type="checkbox" name="gender" value="male">
+		<label>male</label><br>
+
+		<input type="checkbox" name="gender" value="female">
+		<label>female</label><br>
+		
+		<input type="checkbox" name="gender" value="other">
+		<label>other</label><br><br><br><hr>
+
+		Select Your Profession:<br>
+		<input type="checkbox">
+		<label>Goverment Jobs</label><br>
+
+		<input type="checkbox">
+		<label>Private Jobs</label><br>
+		
+		<input type="checkbox">
+		<label>Bussiness Jobs</label><br><br><br><hr>
+
+		Select Your Profession:<br>
+		<select>
+			<option value="Government Jobs">Government Jobs</option>
+			<option value="Private Jobs">Private Jobs</option>
+			<option value="Bussiness Jobs">Business Jobs</option>
+		</select><br><br><br><hr>
+
+		Select Your Profession:<br>
+		<select>
+			<option value="Government Jobs">Government Jobs</option>
+			<option value="Private Jobs" selected>Private Jobs</option>
+			<option value="Bussiness Jobs">Business Jobs</option>
+		</select><br><br><br><hr>
+
+		Select Your Profession:<br>
+		<select size = "2">
+			<option value="Government Jobs">Government Jobs</option>
+			<option value="Private Jobs" selected>Private Jobs</option>
+			<option value="Bussiness Jobs">Business Jobs</option>
+		</select><br><br><br><hr>
+
+		Select Your Profession:<br>
+		<select size="3" multiple>
+    		<option value="Governnment Jobs">Government Jobs</option>
+    		<option value="Private Jobs" selected>Private Jobs</option>
+    		<option value="Business Jobs">Business Jobs</option>
+		</select><br><br><br><hr>
+
+		Text area:<br>
+		<textarea> Please check your imformation again that you filled.
+			Give your feedback here. 
+
+		</textarea><br><br><br><hr>
+
+		Text area:<br>
+		<textarea rows="20" cols="60"> Please check your imformation again that you filled.
+			Give your feedback here. 
+
+		</textarea><br><br><br><hr>
+
+		
+		
+		<input type="button" value="Try it">
+		<button>hello</button>
+		<input type="button" value="Preview" onclick="previewData()">
+        <input type="submit">
+
+
+		
+    <script>
+        function previewData() {
+            var fname = document.getElementsByName('fname')[0].value;
+            var lname = document.getElementsByName('lname')[0].value;
+            var phone = document.getElementsByName('phone')[0].value;
+            var address = document.getElementsByTagName('textarea')[0].value;
+            var email = document.getElementsByName('email')[0].value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var profession = document.querySelector('select[name="profession"]').value;
+
+            var preview = "Name: " + fname + " " + lname + "\n" +
+                          "Phone: " + phone + "\n" +
+                          "Address: " + address + "\n" +
+                          "Email: " + email + "\n" +
+                          "Gender: " + gender + "\n" +
+                          "Profession: " + profession;
+
+            alert(preview);
+        }
+    </script>
+	</form>
+</form>
+</body>
+</html>
