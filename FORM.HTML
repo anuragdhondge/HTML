@@ -1,0 +1,108 @@
+first page name form.html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML FORMS</title>
+</head>
+
+<body>
+
+<form action="process_form.html" method="POST">
+    <center><h1>APPLICATION FORM</h1>
+    <h2>PERSONAL DETAILS</h2></center><br><hr><hr><hr>
+    <h4>Name:</h4>
+    <label for="fname"> First name: </label> <br>
+    <input type="text" name="fname" placeholder="Firstname" required><br>
+
+    <label for="lname"> Last name: </label> <br>
+    <input type="text" name="lname" placeholder="Lastname" required><br><hr>
+    <h4>Phone no:</h4>
+    <label>
+        <input type="text" name="country code" placeholder="country code" value="+91" size="2">
+        <input type="phone" name="phone" pattern="[0-9]{4}-[0-9]{6}" placeholder="1234-567890" size="10" required>
+    </label><br><br><hr>
+    <h4>Address:</h4>
+    <textarea rows="5" cols="80" placeholder="Current Address" required></textarea><br><br><br><hr>
+    <h4>Resume:</h4>
+    <label for="myfile">Drop your Resume:</label>
+    <input type="file" id="myfile" name="myfile" required><br><br>
+
+    <label for="email">Email</label>
+    <input type="email" placeholder="Enter email" name="email" required><br><br>
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Enter password" name="password" required><br><br>
+
+    <label for="psw-repeat">Password-Repeat</label>
+    <input type="password" placeholder="Repeat password" name="password-repeat" required><br><br><br><hr>
+
+    <h4>Select Your Gender:</h4>
+    <input type="radio" name="gender" value="male" required>
+    <label>male</label><br>
+
+    <input type="radio" name="gender" value="female" required>
+    <label>female</label><br>
+    
+    <input type="radio" name="gender" value="other" required>
+    <label>other</label><br><br><br><hr>
+
+    <h4>Select Your Profession:</h4>
+    <select size="2" name="profession" required>
+        <option value="Government Jobs">Government Jobs</option>
+        <option value="Private Jobs" selected>Private Jobs</option>
+        <option value="Business Jobs">Business Jobs</option>
+    </select><br><br><br><hr>
+
+    <h4>Text area:</h4>
+    <textarea rows="20" cols="60" required>Please check your information again that you filled.
+    Give your feedback here.</textarea><br><br><br><hr>
+
+    <input type="button" value="Preview" onclick="previewData()">
+    <input type="submit">
+
+    <script>
+        function previewData() {
+            var fname = document.getElementsByName('fname')[0].value;
+            var lname = document.getElementsByName('lname')[0].value;
+            var phone = document.getElementsByName('phone')[0].value;
+            var address = document.getElementsByTagName('textarea')[0].value;
+            var email = document.getElementsByName('email')[0].value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var profession = document.getElementsByName('profession')[0].value;
+
+            var preview = "Name: " + fname + " " + lname + "\n" +
+                          "Phone: " + phone + "\n" +
+                          "Address: " + address + "\n" +
+                          "Email: " + email + "\n" +
+                          "Gender: " + gender + "\n" +
+                          "Profession: " + profession;
+
+            alert(preview);
+        }
+    </script>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+NEW PAGE:process_form.html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Data</title>
+</head>
+
+<body><center><h1>Form Data</h1>
+    <p><h2>Your resonse has been submitted.</h2></p>
+    <a href="file:///C:/Users/91989/Desktop/AVD/MY%20FIRST%20HTML.html"><P>CLICK HERE </a><h2> to know more about us </P>.</h2><BR></center>
+    
+</body>
+
+</html>
