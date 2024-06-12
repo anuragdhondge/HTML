@@ -12,11 +12,12 @@ first page name form.html
     <center><h1>APPLICATION FORM</h1>
     <h2>PERSONAL DETAILS</h2></center><br><hr><hr><hr>
     <h4>Name:</h4>
-    <label for="fname"> First name: </label> <br>
-    <input type="text" name="fname" placeholder="Firstname" required><br>
 
-    <label for="lname"> Last name: </label> <br>
-    <input type="text" name="lname" placeholder="Lastname" required><br><hr>
+    <label for="fname" pattern="[A-Z]"> First name: </label> <br>
+    <input type="text" name="fname" placeholder="Firstname IN CAPITAL" required><br>
+
+    <label for="lname"[A-Z]> Last name: </label> <br>
+    <input type="text" name="lname" placeholder="Lastname IN CAPITAL" required><br><hr>
     <h4>Phone no:</h4>
     <label>
         <input type="text" name="country code" placeholder="country code" value="+91" size="2">
@@ -38,14 +39,14 @@ first page name form.html
     <input type="password" placeholder="Repeat password" name="password-repeat" required><br><br><br><hr>
 
     <h4>Select Your Gender:</h4>
-    <input type="radio" name="gender" value="male" required>
-    <label>male</label><br>
+    <input type="radio" name="gender" value="Male" required>
+    <label>Male</label><br>
 
-    <input type="radio" name="gender" value="female" required>
-    <label>female</label><br>
+    <input type="radio" name="gender" value="Female" required>
+    <label>Female</label><br>
     
-    <input type="radio" name="gender" value="other" required>
-    <label>other</label><br><br><br><hr>
+    <input type="radio" name="gender" value="Other" required>
+    <label>Other</label><br><br><br><hr>
 
     <h4>Select Your Profession:</h4>
     <select size="2" name="profession" required>
@@ -55,16 +56,17 @@ first page name form.html
     </select><br><br><br><hr>
 
     <h4>Text area:</h4>
-    <textarea rows="20" cols="60" required>Please check your information again that you filled.
-    Give your feedback here.</textarea><br><br><br><hr>
+    <textarea rows="10" cols="60" placeholder="
+    Give your feedback here ,if any."></textarea><br><br><br><hr>
 
     <input type="button" value="Preview" onclick="previewData()">
     <input type="submit">
 
+    
     <script>
         function previewData() {
-            var fname = document.getElementsByName('fname')[0].value;
-            var lname = document.getElementsByName('lname')[0].value;
+            var fname = document.getElementsByName('fname')[0].value.touppercase();
+            var lname = document.getElementsByName('lname')[0].value.touppercase();
             var phone = document.getElementsByName('phone')[0].value;
             var address = document.getElementsByTagName('textarea')[0].value;
             var email = document.getElementsByName('email')[0].value;
@@ -85,6 +87,7 @@ first page name form.html
 
 </body>
 </html>
+
 
 
 
